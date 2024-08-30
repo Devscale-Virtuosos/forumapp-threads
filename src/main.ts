@@ -3,9 +3,16 @@ import morgan from "morgan";
 
 import { checkOriginMiddleware, errorHandlerMiddleware } from "./middlewares";
 import { threadRouter } from "./routes/thread.route";
-import { connectMongodb, env } from "./utils";
+import {
+  connectMongodb,
+  consumeReplyAddedEvent,
+  consumeReplyDeletedEvent,
+  env,
+} from "./utils";
 
 connectMongodb();
+consumeReplyAddedEvent();
+consumeReplyDeletedEvent();
 
 const app = express();
 

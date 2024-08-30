@@ -48,6 +48,16 @@ const ThreadRepositories = {
       throw error;
     }
   },
+  updateReplies: async (threadId: string, replies: string[]) => {
+    try {
+      const updatedThread = await Thread.findByIdAndUpdate(threadId, {
+        replies,
+      });
+      return updatedThread;
+    } catch (error) {
+      throw error;
+    }
+  },
 };
 
 export default ThreadRepositories;

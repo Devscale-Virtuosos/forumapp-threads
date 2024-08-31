@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
-import { createError } from "../utils/error";
+import { createError } from "../utils";
 
 /**
  * Middleware to prevent direct access to services (not through api gateway)

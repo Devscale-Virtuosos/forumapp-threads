@@ -23,7 +23,7 @@ app.use(checkOriginMiddleware);
 /**
  * Routes
  */
-app.use("/", threadRouter);
+app.use("/threads", threadRouter);
 
 // error handler middleware, place it after all routes
 app.use(errorHandlerMiddleware);
